@@ -12,7 +12,7 @@ include("sh_player.lua")
 
 
 // Include the configuration for this map.
-if file.Exists("../gamemodes/prop_hunt/gamemode/maps/"..game.GetMap()..".lua") || file.Exists("../lua_temp/prop_hunt/gamemode/maps/"..game.GetMap()..".lua") then
+if file.Exists("../gamemodes/prop_hunt/gamemode/maps/"..game.GetMap()..".lua", "GAME") || file.Exists("../lua_temp/prop_hunt/gamemode/maps/"..game.GetMap()..".lua", "GAME") then
 
 	include("maps/"..game.GetMap()..".lua")
 	

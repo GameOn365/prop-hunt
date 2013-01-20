@@ -50,8 +50,8 @@ function CLASS:OnSpawn(pl)
 		pl:Blind(true)
 		timer.Simple(unlock_time, pl.Blind, pl, false)
 		
-		timer.Simple(2, pl.Lock, pl)
-		timer.Simple(unlock_time, pl.UnLock, pl)
+		timer.Simple(2, function() pl:Lock() end)
+		timer.Simple(unlock_time, function() pl:UnLock() end)
 		
 	end
 	

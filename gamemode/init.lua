@@ -14,7 +14,7 @@ AddCSLuaFile("sh_player.lua")
 
 
 // If there is a mapfile send it to the client (sometimes servers want to change settings for certain maps).
-if file.Exists("../gamemodes/prop_hunt/gamemode/maps/"..game.GetMap()..".lua") then
+if file.Exists("../gamemodes/prop_hunt/gamemode/maps/"..game.GetMap()..".lua", "GAME") then
 
 	AddCSLuaFile("maps/"..game.GetMap()..".lua")
 	

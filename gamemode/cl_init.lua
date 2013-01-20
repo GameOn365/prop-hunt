@@ -118,7 +118,11 @@ hook.Add("HUDPaint", "PH_HUDPaint", HUDPaint)
 function Initialize()
 
 	hull_z = 80
-	surface.CreateFont("Arial", 14, 1200, true, false, "ph_arial")
+	surface.CreateFont("ph_arial", {
+		font = "Arial",
+		size = 14,
+		weight = 1200
+	})
 	
 end
 hook.Add("Initialize", "PH_Initialize", Initialize)
