@@ -175,6 +175,15 @@ end
 // Called when a player tries to use an object.
 function GM:PlayerUse(pl, ent)
 
+	// Check last us time
+	if pl.LastUseTime and pl.LastUseTime + 1 > CurTime() then
+		
+		return false
+		
+	end
+	
+	pl.LastUseTime = CurTime()
+
 	// Prevent dead or spectating players from being able to use stuff.
 	if !pl:Alive() || pl:Team() == TEAM_SPECTATOR then
 	
@@ -241,6 +250,13 @@ function GM:PlayerUse(pl, ent)
 	pl.last_door_time = CurTime()
 	
 	return true
+	
+end
+
+// This is called when somebody tries to pick up and object
+function GM:AllowPlayerPickup(ply, ent)
+	
+	return false
 	
 end
 
